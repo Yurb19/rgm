@@ -1,6 +1,8 @@
 # test-crud
 A small CRUD API using MongoDB and JWTs
 
+this app can be tested at https://crud-test-vnme.herokuapp.com/
+
 ## how to install
 
 just run this command in the root folder
