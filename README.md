@@ -41,14 +41,14 @@ The API has two main Routes
     
 2. ***api/users*** - contains four subroutes
     - GET **api/users/** - gets all the users 
-    - GET **api/users/:_id** - gets a user with the specified id
+    - GET **api/users/:_id** - gets an user with the specified id
     
     ```js
       api/users/60419ac9a484b82ea8f25e36
     ```
-    - PUT **api/users/:_id** - updates a user with the specified id
+    - PUT **api/users/:_id** - updates an user with the specified id
     ```json
-    // Request must have this body template
+    // Request must have this body template 
     {
       "name": "Ramon",
       "currentPassword": "12345678",
@@ -63,4 +63,4 @@ The API has two main Routes
     
     
  ## Note
- In order to access the users route, Authorization header mush be filled with the Bearer Token
+ In order to access the users route, Authorization header must be filled with the Bearer Token
