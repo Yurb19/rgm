@@ -5,7 +5,7 @@ module.exports = class UserControllers extends Util {
   getUser = async (req, res, next) => {
     try {
       const id = req.params._id;
-      const user = await User.findOne({ _id: id });
+      const user = await User.findOne({ _id: id }, {password: 0});
 
       res.status(200).json({
         data: user,
