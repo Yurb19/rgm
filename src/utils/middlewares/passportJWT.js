@@ -14,7 +14,7 @@ module.exports = (passport) => {
                 const user = await User.findById(jwt_payload.id, {password: 0})
                 if (user && user.status) {
                     // console.log(user)
-                    return done(null, user);
+                    return done(null, user); // * Stores the user in the request
                 }
                 return done(null, false, {message: 'User not Found'}); 
             } catch (error) {

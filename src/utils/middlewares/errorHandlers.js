@@ -5,11 +5,11 @@ const logErrors = async (err, req, res, next) => {
 }
 
 const errorHandler = async (err, req, res, next) => {
-    res.status(err.status || 500);
+    res.status(err.status || 500); 
     const errors = {};
     for (const key in err) {
         if (err.hasOwnProperty(key)) {
-            if(err[key].name == "ValidatorError") res.status(400);
+            if(err[key].name == "ValidatorError") res.status(400); // * returns 'bad request' if an error from Mongoose validations occurs
             errors[key] = err[key].message;
         }
     }
