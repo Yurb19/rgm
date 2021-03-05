@@ -1,6 +1,5 @@
 const express = require("express");
 const config = require("./config/index");
-const cors = require('cors');
 const morgan = require('morgan');
 const passport = require('passport');
 const { logErrors, errorHandler } = require('./utils/middlewares/errorHandlers');
@@ -11,15 +10,10 @@ const app = express();
 
 app.set("PORT", config.port);
 app.set("IP", config.ip);
-app.set("CORS_OPTIONS", {
-  origin: config.corsOrigin,
-  optionsSuccessStatus: 200,
-});
 
 // * Middlewares
 
 app.use(express.json());
-app.use(cors(app.get('CORS_OPTIONS')));
 app.use(morgan('dev'));
 require('./utils/middlewares/passportJWT')(passport);
 
