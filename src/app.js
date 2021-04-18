@@ -20,7 +20,8 @@ require('./utils/middlewares/passportJWT')(passport);
 // * Routes
 
 app.use('/api/auth', require('./routes/auth.route'));
-app.use('/api/users', passport.authenticate('jwt', {session: false}), require('./routes/user.route'));
+app.use('/api/users', passport.authenticate('jwt', { session: false }), require('./routes/user.route'));
+app.use('/api/games', passport.authenticate('jwt', { session: false }), require('./routes/games.route'))
 
 // * Error Middlewares
 
